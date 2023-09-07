@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:login/src/features/hello_world/hello_world.dart';
 import 'package:login/src/router/nested_navigation.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -18,7 +19,7 @@ final router =
           GoRoute(
               path: '/a',
               pageBuilder: (context, state) =>
-                  const NoTransitionPage(child: Text("Page A")),
+                  const NoTransitionPage(child: HelloWorld()),
               routes: [
                 GoRoute(
                     path: 'details',

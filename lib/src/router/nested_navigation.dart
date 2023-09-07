@@ -24,7 +24,7 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
               SalomonBottomBarItem(
                 icon: const Icon(Icons.home),
                 title: const Text("Home"),
-                selectedColor: Colors.purple,
+                selectedColor: Colors.pink,
               ),
               SalomonBottomBarItem(
                 icon: const Icon(Icons.search),

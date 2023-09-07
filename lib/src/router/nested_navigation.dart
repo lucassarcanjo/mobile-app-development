@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 class ScaffoldWithNestedNavigation extends StatelessWidget {
   const ScaffoldWithNestedNavigation({Key? key, required this.navigationShell})
@@ -15,15 +16,21 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: navigationShell,
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: navigationShell.currentIndex,
-        destinations: const [
-          NavigationDestination(label: 'Section A', icon: Icon(Icons.home)),
-          NavigationDestination(label: 'Section B', icon: Icon(Icons.settings)),
-        ],
-        onDestinationSelected: _goBranch,
-      ),
-    );
+        body: navigationShell,
+        bottomNavigationBar: SalomonBottomBar(
+            currentIndex: navigationShell.currentIndex,
+            onTap: _goBranch,
+            items: [
+              SalomonBottomBarItem(
+                icon: const Icon(Icons.home),
+                title: const Text("Home"),
+                selectedColor: Colors.purple,
+              ),
+              SalomonBottomBarItem(
+                icon: const Icon(Icons.search),
+                title: const Text("Search"),
+                selectedColor: Colors.orange,
+              ),
+            ]));
   }
 }
